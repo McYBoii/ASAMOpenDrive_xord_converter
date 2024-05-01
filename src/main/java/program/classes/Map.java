@@ -1,8 +1,6 @@
 package program.classes;
 
 import program.interfaces.IDHandler;
-
-import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 
 public class Map extends IDHandler {
@@ -15,5 +13,7 @@ public class Map extends IDHandler {
         ElementID = "Map"+atomicInteger.incrementAndGet();
     }
 
-    //TODO
+    public void addMapElement(MapElement mapElement){
+        mapElements.add(mapElement);
+    }
 }
