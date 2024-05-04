@@ -1,0 +1,1686 @@
+%Metamodel
+class Map{
+    contains MapElement[] elements opposite map
+}
+abstract class MapElement{
+    container Map map opposite elements
+}
+class Road extends MapElement{
+    MapElement successor
+    MapElement predecessor
+    %contains Lane [] lanes opposite road
+    contains LaneSection[] lanesections opposite road
+}
+class Junction extends MapElement{
+    contains Connection[] connections opposite junction
+}
+class JunctionGroup extends MapElement{
+    contains Junction[] junctions
+}
+class LaneSection{
+    container Road road opposite lanesections
+    contains Lane[] leftlanes
+    contains Lane centerlane
+    contains Lane[] rightlanes
+}
+class Lane{
+    Lane laneSuccessor
+    Lane lanePredecessor
+    LaneType type
+}
+class Connection{
+    container Junction junction opposite connections
+    Road incomingRoad
+    Road connectingRoad
+    contains LaneLink[] links opposite connection
+}
+class LaneLink{
+    container Connection connection opposite links
+    Lane from
+    Lane to
+}
+enum LaneType {border, sidewalk, driving, restricted, none}
+
+%Scope
+scope node = 10..5000, Map += 0, Junction += 0, Connection += 0, LaneLink += 0, Road += 0, Lane += 0.
+
+%Instace model
+Map(map).
+Road(road1).
+elements(map, road1).
+successor(road1, junction1).
+Road(road2).
+elements(map, road2).
+successor(road2, junction1).
+predecessor(road2, junction6).
+Road(road3).
+elements(map, road3).
+successor(road3, junction5).
+predecessor(road3, junction1).
+Road(road76).
+elements(map, road76).
+successor(road76, road3).
+predecessor(road76, road1).
+Road(road88).
+elements(map, road88).
+successor(road88, road1).
+predecessor(road88, road2).
+Road(road91).
+elements(map, road91).
+successor(road91, road1).
+predecessor(road91, road3).
+Road(road94).
+elements(map, road94).
+successor(road94, road1).
+predecessor(road94, road3).
+Road(road97).
+elements(map, road97).
+successor(road97, road1).
+predecessor(road97, road3).
+Road(road128).
+elements(map, road128).
+successor(road128, junction4).
+predecessor(road128, junction5).
+Road(road312).
+elements(map, road312).
+successor(road312, road2).
+predecessor(road312, road3).
+Road(road365).
+elements(map, road365).
+successor(road365, junction47).
+predecessor(road365, junction45).
+Road(road367).
+elements(map, road367).
+successor(road367, junction47).
+predecessor(road367, junction4).
+Road(road475).
+elements(map, road475).
+successor(road475, junction5).
+Road(road560).
+elements(map, road560).
+successor(road560, road702).
+predecessor(road560, junction47).
+Road(road690).
+elements(map, road690).
+successor(road690, road702).
+Road(road699).
+elements(map, road699).
+successor(road699, road560).
+predecessor(road699, road690).
+Road(road702).
+elements(map, road702).
+successor(road702, road690).
+predecessor(road702, road560).
+Road(road759).
+elements(map, road759).
+successor(road759, road128).
+predecessor(road759, road3).
+Road(road762).
+elements(map, road762).
+successor(road762, road3).
+predecessor(road762, road128).
+Road(road765).
+elements(map, road765).
+successor(road765, road3).
+predecessor(road765, road128).
+Road(road768).
+elements(map, road768).
+successor(road768, road3).
+predecessor(road768, road128).
+Road(road771).
+elements(map, road771).
+successor(road771, road3).
+predecessor(road771, road128).
+Road(road804).
+elements(map, road804).
+successor(road804, road475).
+predecessor(road804, road128).
+Road(road816).
+elements(map, road816).
+successor(road816, road3).
+predecessor(road816, road475).
+Road(road817).
+elements(map, road817).
+successor(road817, junction6).
+Road(road819).
+elements(map, road819).
+successor(road819, junction7).
+predecessor(road819, junction6).
+Road(road855).
+elements(map, road855).
+successor(road855, road819).
+predecessor(road855, road2).
+Road(road867).
+elements(map, road867).
+successor(road867, road817).
+predecessor(road867, road2).
+Road(road870).
+elements(map, road870).
+successor(road870, road819).
+predecessor(road870, road817).
+Road(road900).
+elements(map, road900).
+successor(road900, road2).
+predecessor(road900, road817).
+Road(road903).
+elements(map, road903).
+successor(road903, road817).
+predecessor(road903, road819).
+Road(road906).
+elements(map, road906).
+successor(road906, road2).
+predecessor(road906, road819).
+Road(road907).
+elements(map, road907).
+successor(road907, junction44).
+predecessor(road907, junction7).
+Road(road908).
+elements(map, road908).
+successor(road908, junction7).
+Road(road911).
+elements(map, road911).
+successor(road911, road907).
+predecessor(road911, road819).
+Road(road914).
+elements(map, road914).
+successor(road914, road908).
+predecessor(road914, road819).
+Road(road917).
+elements(map, road917).
+successor(road917, road819).
+predecessor(road917, road907).
+Road(road941).
+elements(map, road941).
+successor(road941, road908).
+predecessor(road941, road907).
+Road(road974).
+elements(map, road974).
+successor(road974, road907).
+predecessor(road974, road908).
+Road(road977).
+elements(map, road977).
+successor(road977, road819).
+predecessor(road977, road908).
+Road(road979).
+elements(map, road979).
+predecessor(road979, junction8).
+Road(road1015).
+elements(map, road1015).
+predecessor(road1015, junction11).
+Road(road1017).
+elements(map, road1017).
+predecessor(road1017, junction15).
+Road(road1214).
+elements(map, road1214).
+Road(road1400).
+elements(map, road1400).
+Road(road1695).
+elements(map, road1695).
+successor(road1695, junction11).
+predecessor(road1695, junction8).
+Road(road1795).
+elements(map, road1795).
+successor(road1795, junction9).
+predecessor(road1795, junction8).
+Road(road1871).
+elements(map, road1871).
+successor(road1871, junction10).
+predecessor(road1871, junction9).
+Road(road2048).
+elements(map, road2048).
+successor(road2048, junction13).
+predecessor(road2048, junction10).
+Road(road2055).
+elements(map, road2055).
+successor(road2055, junction10).
+predecessor(road2055, junction17).
+Road(road2214).
+elements(map, road2214).
+successor(road2214, road2048).
+predecessor(road2214, road1871).
+Road(road2217).
+elements(map, road2217).
+successor(road2217, road1871).
+predecessor(road2217, road2048).
+Road(road2244).
+elements(map, road2244).
+successor(road2244, road2055).
+predecessor(road2244, road1871).
+Road(road2265).
+elements(map, road2265).
+successor(road2265, road2055).
+predecessor(road2265, road2048).
+Road(road2313).
+elements(map, road2313).
+successor(road2313, road1871).
+predecessor(road2313, road2055).
+Road(road2316).
+elements(map, road2316).
+successor(road2316, road2048).
+predecessor(road2316, road2055).
+Road(road2318).
+elements(map, road2318).
+successor(road2318, junction12).
+predecessor(road2318, junction11).
+Road(road2319).
+elements(map, road2319).
+successor(road2319, junction15).
+predecessor(road2319, junction12).
+Road(road2321).
+elements(map, road2321).
+successor(road2321, junction12).
+predecessor(road2321, junction14).
+Road(road2324).
+elements(map, road2324).
+successor(road2324, road2318).
+predecessor(road2324, road1695).
+Road(road2336).
+elements(map, road2336).
+successor(road2336, road1015).
+predecessor(road2336, road1695).
+Road(road2339).
+elements(map, road2339).
+successor(road2339, road1695).
+predecessor(road2339, road2318).
+Road(road2345).
+elements(map, road2345).
+successor(road2345, road1015).
+predecessor(road2345, road2318).
+Road(road2378).
+elements(map, road2378).
+successor(road2378, road2318).
+predecessor(road2378, road1015).
+Road(road2384).
+elements(map, road2384).
+successor(road2384, road1695).
+predecessor(road2384, road1015).
+Road(road2417).
+elements(map, road2417).
+successor(road2417, road2319).
+predecessor(road2417, road2318).
+Road(road2420).
+elements(map, road2420).
+successor(road2420, road2321).
+predecessor(road2420, road2318).
+Road(road2444).
+elements(map, road2444).
+successor(road2444, road2321).
+predecessor(road2444, road2319).
+Road(road2537).
+elements(map, road2537).
+successor(road2537, road2319).
+predecessor(road2537, road2321).
+Road(road2606).
+elements(map, road2606).
+successor(road2606, road2318).
+predecessor(road2606, road2319).
+Road(road2614).
+elements(map, road2614).
+successor(road2614, road2318).
+predecessor(road2614, road2321).
+Road(road2629).
+elements(map, road2629).
+successor(road2629, road2318).
+predecessor(road2629, road2321).
+Road(road2630).
+elements(map, road2630).
+successor(road2630, junction13).
+predecessor(road2630, junction42).
+Road(road2631).
+elements(map, road2631).
+successor(road2631, junction17).
+predecessor(road2631, junction13).
+Road(road2695).
+elements(map, road2695).
+successor(road2695, junction14).
+predecessor(road2695, junction15).
+Road(road2696).
+elements(map, road2696).
+predecessor(road2696, junction21).
+Road(road2697).
+elements(map, road2697).
+successor(road2697, junction20).
+Road(road2756).
+elements(map, road2756).
+successor(road2756, road2697).
+predecessor(road2756, road2321).
+Road(road2777).
+elements(map, road2777).
+successor(road2777, road2695).
+predecessor(road2777, road2321).
+Road(road2798).
+elements(map, road2798).
+successor(road2798, road2696).
+predecessor(road2798, road2321).
+Road(road2843).
+elements(map, road2843).
+successor(road2843, road2696).
+predecessor(road2843, road2695).
+Road(road2858).
+elements(map, road2858).
+successor(road2858, road2697).
+predecessor(road2858, road2695).
+Road(road2897).
+elements(map, road2897).
+successor(road2897, road2321).
+predecessor(road2897, road2695).
+Road(road2903).
+elements(map, road2903).
+successor(road2903, road2321).
+predecessor(road2903, road2697).
+Road(road2918).
+elements(map, road2918).
+successor(road2918, road2695).
+predecessor(road2918, road2697).
+Road(road2969).
+elements(map, road2969).
+successor(road2969, road2696).
+predecessor(road2969, road2697).
+Road(road3030).
+elements(map, road3030).
+successor(road3030, junction18).
+predecessor(road3030, junction15).
+Road(road3048).
+elements(map, road3048).
+successor(road3048, road1017).
+predecessor(road3048, road2319).
+Road(road3051).
+elements(map, road3051).
+successor(road3051, road3030).
+predecessor(road3051, road2319).
+Road(road3063).
+elements(map, road3063).
+successor(road3063, road2695).
+predecessor(road3063, road2319).
+Road(road3066).
+elements(map, road3066).
+successor(road3066, road2319).
+predecessor(road3066, road3030).
+Road(road3081).
+elements(map, road3081).
+successor(road3081, road2695).
+predecessor(road3081, road3030).
+Road(road3093).
+elements(map, road3093).
+successor(road3093, road1017).
+predecessor(road3093, road3030).
+Road(road3102).
+elements(map, road3102).
+successor(road3102, road2695).
+predecessor(road3102, road1017).
+Road(road3132).
+elements(map, road3132).
+successor(road3132, road3030).
+predecessor(road3132, road1017).
+Road(road3141).
+elements(map, road3141).
+successor(road3141, road2319).
+predecessor(road3141, road1017).
+Road(road3150).
+elements(map, road3150).
+successor(road3150, road2319).
+predecessor(road3150, road2695).
+Road(road3153).
+elements(map, road3153).
+successor(road3153, road1017).
+predecessor(road3153, road2695).
+Road(road3177).
+elements(map, road3177).
+successor(road3177, road3030).
+predecessor(road3177, road2695).
+Road(road3179).
+elements(map, road3179).
+predecessor(road3179, junction26).
+Road(road3234).
+elements(map, road3234).
+successor(road3234, junction24).
+predecessor(road3234, junction17).
+Road(road3236).
+elements(map, road3236).
+successor(road3236, junction33).
+predecessor(road3236, junction17).
+Road(road3352).
+elements(map, road3352).
+successor(road3352, junction18).
+predecessor(road3352, junction25).
+Road(road3353).
+elements(map, road3353).
+successor(road3353, junction21).
+predecessor(road3353, junction18).
+Road(road3354).
+elements(map, road3354).
+successor(road3354, junction20).
+predecessor(road3354, junction21).
+Road(road3402).
+elements(map, road3402).
+successor(road3402, road2630).
+predecessor(road3402, road2631).
+Road(road3414).
+elements(map, road3414).
+successor(road3414, road2048).
+predecessor(road3414, road2630).
+Road(road3417).
+elements(map, road3417).
+successor(road3417, road2630).
+predecessor(road3417, road2048).
+Road(road3420).
+elements(map, road3420).
+successor(road3420, road2631).
+predecessor(road3420, road2048).
+Road(road3468).
+elements(map, road3468).
+successor(road3468, road2048).
+predecessor(road3468, road2631).
+Road(road3471).
+elements(map, road3471).
+successor(road3471, road2631).
+predecessor(road3471, road2630).
+Road(road3492).
+elements(map, road3492).
+successor(road3492, road3236).
+predecessor(road3492, road2631).
+Road(road3495).
+elements(map, road3495).
+successor(road3495, road3234).
+predecessor(road3495, road2631).
+Road(road3498).
+elements(map, road3498).
+successor(road3498, road2055).
+predecessor(road3498, road2631).
+Road(road3501).
+elements(map, road3501).
+successor(road3501, road2055).
+predecessor(road3501, road3234).
+Road(road3504).
+elements(map, road3504).
+successor(road3504, road2631).
+predecessor(road3504, road3234).
+Road(road3507).
+elements(map, road3507).
+successor(road3507, road3236).
+predecessor(road3507, road3234).
+Road(road3510).
+elements(map, road3510).
+successor(road3510, road2631).
+predecessor(road3510, road2055).
+Road(road3513).
+elements(map, road3513).
+successor(road3513, road3236).
+predecessor(road3513, road2055).
+Road(road3516).
+elements(map, road3516).
+successor(road3516, road3234).
+predecessor(road3516, road2055).
+Road(road3519).
+elements(map, road3519).
+successor(road3519, road3234).
+predecessor(road3519, road3236).
+Road(road3522).
+elements(map, road3522).
+successor(road3522, road2055).
+predecessor(road3522, road3236).
+Road(road3525).
+elements(map, road3525).
+successor(road3525, road2631).
+predecessor(road3525, road3236).
+Road(road3526).
+elements(map, road3526).
+successor(road3526, junction19).
+predecessor(road3526, junction18).
+Road(road3593).
+elements(map, road3593).
+successor(road3593, junction31).
+predecessor(road3593, junction19).
+Road(road3688).
+elements(map, road3688).
+successor(road3688, junction46).
+predecessor(road3688, junction20).
+Road(road3710).
+elements(map, road3710).
+successor(road3710, road3354).
+predecessor(road3710, road2697).
+Road(road3740).
+elements(map, road3740).
+successor(road3740, road2697).
+predecessor(road3740, road3354).
+Road(road3743).
+elements(map, road3743).
+successor(road3743, road2697).
+predecessor(road3743, road3688).
+Road(road3776).
+elements(map, road3776).
+successor(road3776, road3354).
+predecessor(road3776, road3688).
+Road(road3806).
+elements(map, road3806).
+successor(road3806, road3688).
+predecessor(road3806, road3354).
+Road(road3833).
+elements(map, road3833).
+successor(road3833, road3353).
+predecessor(road3833, road2696).
+Road(road3836).
+elements(map, road3836).
+successor(road3836, road3354).
+predecessor(road3836, road3353).
+Road(road3842).
+elements(map, road3842).
+successor(road3842, road2696).
+predecessor(road3842, road3354).
+Road(road3845).
+elements(map, road3845).
+successor(road3845, road3353).
+predecessor(road3845, road3354).
+Road(road3848).
+elements(map, road3848).
+successor(road3848, road3353).
+predecessor(road3848, road3354).
+Road(road3850).
+elements(map, road3850).
+Road(road3851).
+elements(map, road3851).
+Road(road3972).
+elements(map, road3972).
+successor(road3972, junction46).
+predecessor(road3972, junction34).
+Road(road4115).
+elements(map, road4115).
+successor(road4115, junction23).
+predecessor(road4115, junction22).
+Road(road4116).
+elements(map, road4116).
+successor(road4116, junction22).
+predecessor(road4116, junction24).
+Road(road4312).
+elements(map, road4312).
+successor(road4312, junction22).
+predecessor(road4312, junction43).
+Road(road4342).
+elements(map, road4342).
+successor(road4342, road4115).
+predecessor(road4342, road4312).
+Road(road4351).
+elements(map, road4351).
+successor(road4351, road4312).
+predecessor(road4351, road4116).
+Road(road4381).
+elements(map, road4381).
+successor(road4381, road4115).
+predecessor(road4381, road4116).
+Road(road4390).
+elements(map, road4390).
+successor(road4390, road4115).
+predecessor(road4390, road4116).
+Road(road4456).
+elements(map, road4456).
+successor(road4456, road4115).
+predecessor(road4456, road4116).
+Road(road4458).
+elements(map, road4458).
+successor(road4458, junction16).
+predecessor(road4458, junction23).
+Road(road4459).
+elements(map, road4459).
+successor(road4459, junction23).
+predecessor(road4459, junction25).
+Road(road4510).
+elements(map, road4510).
+successor(road4510, road4459).
+predecessor(road4510, road4115).
+Road(road4549).
+elements(map, road4549).
+successor(road4549, road4458).
+predecessor(road4549, road4115).
+Road(road4552).
+elements(map, road4552).
+successor(road4552, road4458).
+predecessor(road4552, road4115).
+Road(road4567).
+elements(map, road4567).
+successor(road4567, road4458).
+predecessor(road4567, road4115).
+Road(road4591).
+elements(map, road4591).
+successor(road4591, road4458).
+predecessor(road4591, road4459).
+Road(road4592).
+elements(map, road4592).
+successor(road4592, junction16).
+predecessor(road4592, junction26).
+Road(road4593).
+elements(map, road4593).
+successor(road4593, junction24).
+predecessor(road4593, junction16).
+Road(road4605).
+elements(map, road4605).
+successor(road4605, road4592).
+predecessor(road4605, road4458).
+Road(road4641).
+elements(map, road4641).
+successor(road4641, road4593).
+predecessor(road4641, road4458).
+Road(road4659).
+elements(map, road4659).
+successor(road4659, road4593).
+predecessor(road4659, road4458).
+Road(road4662).
+elements(map, road4662).
+successor(road4662, road4593).
+predecessor(road4662, road4458).
+Road(road4683).
+elements(map, road4683).
+successor(road4683, road4593).
+predecessor(road4683, road4592).
+Road(road4755).
+elements(map, road4755).
+successor(road4755, road4116).
+predecessor(road4755, road3234).
+Road(road4764).
+elements(map, road4764).
+successor(road4764, road3234).
+predecessor(road4764, road4593).
+Road(road4803).
+elements(map, road4803).
+successor(road4803, road4116).
+predecessor(road4803, road4593).
+Road(road4842).
+elements(map, road4842).
+successor(road4842, road4116).
+predecessor(road4842, road4593).
+Road(road4845).
+elements(map, road4845).
+successor(road4845, road4116).
+predecessor(road4845, road4593).
+Road(road4855).
+elements(map, road4855).
+successor(road4855, road4459).
+predecessor(road4855, road3352).
+Road(road4867).
+elements(map, road4867).
+successor(road4867, road3352).
+predecessor(road4867, road4459).
+Road(road4870).
+elements(map, road4870).
+successor(road4870, road3352).
+predecessor(road4870, road4459).
+Road(road5018).
+elements(map, road5018).
+successor(road5018, junction27).
+predecessor(road5018, junction32).
+Road(road5019).
+elements(map, road5019).
+successor(road5019, junction19).
+predecessor(road5019, junction27).
+Road(road5020).
+elements(map, road5020).
+successor(road5020, junction25).
+predecessor(road5020, junction27).
+Road(road5021).
+elements(map, road5021).
+successor(road5021, junction27).
+predecessor(road5021, junction43).
+Road(road5204).
+elements(map, road5204).
+successor(road5204, road5020).
+predecessor(road5204, road5018).
+Road(road5225).
+elements(map, road5225).
+successor(road5225, road5019).
+predecessor(road5225, road5018).
+Road(road5228).
+elements(map, road5228).
+successor(road5228, road5020).
+predecessor(road5228, road5021).
+Road(road5255).
+elements(map, road5255).
+successor(road5255, road5020).
+predecessor(road5255, road5021).
+Road(road5285).
+elements(map, road5285).
+successor(road5285, road5018).
+predecessor(road5285, road5021).
+Road(road5327).
+elements(map, road5327).
+successor(road5327, road5019).
+predecessor(road5327, road5021).
+Road(road5381).
+elements(map, road5381).
+successor(road5381, road5020).
+predecessor(road5381, road4459).
+Road(road5423).
+elements(map, road5423).
+successor(road5423, road3593).
+predecessor(road5423, road3526).
+Road(road5426).
+elements(map, road5426).
+successor(road5426, road3593).
+predecessor(road5426, road3526).
+Road(road5429).
+elements(map, road5429).
+successor(road5429, road3593).
+predecessor(road5429, road3526).
+Road(road5456).
+elements(map, road5456).
+successor(road5456, road3526).
+predecessor(road5456, road3593).
+Road(road5477).
+elements(map, road5477).
+successor(road5477, road3593).
+predecessor(road5477, road5019).
+Road(road5498).
+elements(map, road5498).
+successor(road5498, road3593).
+predecessor(road5498, road5019).
+Road(road5516).
+elements(map, road5516).
+successor(road5516, road5019).
+predecessor(road5516, road5020).
+Road(road5561).
+elements(map, road5561).
+successor(road5561, road3352).
+predecessor(road5561, road5020).
+Road(road5597).
+elements(map, road5597).
+successor(road5597, road5019).
+predecessor(road5597, road3526).
+Road(road5624).
+elements(map, road5624).
+successor(road5624, road3353).
+predecessor(road5624, road3352).
+Road(road5627).
+elements(map, road5627).
+successor(road5627, road3030).
+predecessor(road5627, road3352).
+Road(road5630).
+elements(map, road5630).
+successor(road5630, road3353).
+predecessor(road5630, road3352).
+Road(road5633).
+elements(map, road5633).
+successor(road5633, road3526).
+predecessor(road5633, road3352).
+Road(road5648).
+elements(map, road5648).
+successor(road5648, road3030).
+predecessor(road5648, road3353).
+Road(road5651).
+elements(map, road5651).
+successor(road5651, road3352).
+predecessor(road5651, road3353).
+Road(road5654).
+elements(map, road5654).
+successor(road5654, road3352).
+predecessor(road5654, road3353).
+Road(road5663).
+elements(map, road5663).
+successor(road5663, road3526).
+predecessor(road5663, road3353).
+Road(road5666).
+elements(map, road5666).
+successor(road5666, road3352).
+predecessor(road5666, road3526).
+Road(road5672).
+elements(map, road5672).
+successor(road5672, road3030).
+predecessor(road5672, road3526).
+Road(road5678).
+elements(map, road5678).
+successor(road5678, road3353).
+predecessor(road5678, road3526).
+Road(road5681).
+elements(map, road5681).
+successor(road5681, road3352).
+predecessor(road5681, road3030).
+Road(road5684).
+elements(map, road5684).
+successor(road5684, road3526).
+predecessor(road5684, road3030).
+Road(road5687).
+elements(map, road5687).
+successor(road5687, road3353).
+predecessor(road5687, road3030).
+Road(road5688).
+elements(map, road5688).
+successor(road5688, junction26).
+predecessor(road5688, junction9).
+Road(road5694).
+elements(map, road5694).
+successor(road5694, road1871).
+predecessor(road5694, road1795).
+Road(road5712).
+elements(map, road5712).
+successor(road5712, road5688).
+predecessor(road5712, road1795).
+Road(road5715).
+elements(map, road5715).
+successor(road5715, road1795).
+predecessor(road5715, road1871).
+Road(road5721).
+elements(map, road5721).
+successor(road5721, road5688).
+predecessor(road5721, road1871).
+Road(road5745).
+elements(map, road5745).
+successor(road5745, road1795).
+predecessor(road5745, road5688).
+Road(road5748).
+elements(map, road5748).
+successor(road5748, road1871).
+predecessor(road5748, road5688).
+Road(road5751).
+elements(map, road5751).
+successor(road5751, road5688).
+predecessor(road5751, road4592).
+Road(road5772).
+elements(map, road5772).
+successor(road5772, road3179).
+predecessor(road5772, road4592).
+Road(road5775).
+elements(map, road5775).
+successor(road5775, road4592).
+predecessor(road5775, road5688).
+Road(road5778).
+elements(map, road5778).
+successor(road5778, road3179).
+predecessor(road5778, road5688).
+Road(road5814).
+elements(map, road5814).
+successor(road5814, road5688).
+predecessor(road5814, road3179).
+Road(road5817).
+elements(map, road5817).
+successor(road5817, road4592).
+predecessor(road5817, road3179).
+Road(road5862).
+elements(map, road5862).
+successor(road5862, road1795).
+predecessor(road5862, road1695).
+Road(road5919).
+elements(map, road5919).
+successor(road5919, road979).
+predecessor(road5919, road1695).
+Road(road5970).
+elements(map, road5970).
+successor(road5970, road979).
+predecessor(road5970, road1795).
+Road(road5973).
+elements(map, road5973).
+successor(road5973, road1695).
+predecessor(road5973, road1795).
+Road(road6015).
+elements(map, road6015).
+successor(road6015, road1695).
+predecessor(road6015, road979).
+Road(road6024).
+elements(map, road6024).
+successor(road6024, road1795).
+predecessor(road6024, road979).
+Road(road6245).
+elements(map, road6245).
+successor(road6245, junction43).
+predecessor(road6245, junction29).
+Road(road6321).
+elements(map, road6321).
+successor(road6321, junction2).
+predecessor(road6321, junction31).
+Road(road6322).
+elements(map, road6322).
+successor(road6322, junction30).
+predecessor(road6322, junction31).
+Road(road6324).
+elements(map, road6324).
+successor(road6324, junction30).
+predecessor(road6324, junction28).
+Road(road6325).
+elements(map, road6325).
+successor(road6325, junction28).
+predecessor(road6325, junction46).
+Road(road6353).
+elements(map, road6353).
+successor(road6353, junction28).
+predecessor(road6353, junction30).
+Road(road6529).
+elements(map, road6529).
+successor(road6529, junction28).
+predecessor(road6529, junction35).
+Road(road6532).
+elements(map, road6532).
+successor(road6532, road6529).
+predecessor(road6532, road6324).
+Road(road6535).
+elements(map, road6535).
+successor(road6535, road6353).
+predecessor(road6535, road6324).
+Road(road6586).
+elements(map, road6586).
+successor(road6586, road6325).
+predecessor(road6586, road6324).
+Road(road6607).
+elements(map, road6607).
+successor(road6607, road6324).
+predecessor(road6607, road6325).
+Road(road6622).
+elements(map, road6622).
+successor(road6622, road6353).
+predecessor(road6622, road6325).
+Road(road6655).
+elements(map, road6655).
+successor(road6655, road6529).
+predecessor(road6655, road6325).
+Road(road6670).
+elements(map, road6670).
+successor(road6670, road6529).
+predecessor(road6670, road6353).
+Road(road6682).
+elements(map, road6682).
+successor(road6682, road6325).
+predecessor(road6682, road6353).
+Road(road6688).
+elements(map, road6688).
+successor(road6688, road6324).
+predecessor(road6688, road6353).
+Road(road6691).
+elements(map, road6691).
+successor(road6691, road6325).
+predecessor(road6691, road6529).
+Road(road6694).
+elements(map, road6694).
+successor(road6694, road6324).
+predecessor(road6694, road6529).
+Road(road6721).
+elements(map, road6721).
+successor(road6721, road6353).
+predecessor(road6721, road6529).
+Road(road6730).
+elements(map, road6730).
+successor(road6730, road6353).
+predecessor(road6730, road6322).
+Road(road6736).
+elements(map, road6736).
+successor(road6736, road6324).
+predecessor(road6736, road6322).
+Road(road6769).
+elements(map, road6769).
+successor(road6769, road6322).
+predecessor(road6769, road6324).
+Road(road6772).
+elements(map, road6772).
+successor(road6772, road6353).
+predecessor(road6772, road6324).
+Road(road6787).
+elements(map, road6787).
+successor(road6787, road6324).
+predecessor(road6787, road6353).
+Road(road6788).
+elements(map, road6788).
+successor(road6788, junction32).
+predecessor(road6788, junction31).
+Road(road6791).
+elements(map, road6791).
+successor(road6791, road6321).
+predecessor(road6791, road3593).
+Road(road6794).
+elements(map, road6794).
+successor(road6794, road6321).
+predecessor(road6794, road3593).
+Road(road6797).
+elements(map, road6797).
+successor(road6797, road6321).
+predecessor(road6797, road3593).
+Road(road6827).
+elements(map, road6827).
+successor(road6827, road6788).
+predecessor(road6827, road3593).
+Road(road6887).
+elements(map, road6887).
+successor(road6887, road6322).
+predecessor(road6887, road3593).
+Road(road6896).
+elements(map, road6896).
+successor(road6896, road3593).
+predecessor(road6896, road6321).
+Road(road6899).
+elements(map, road6899).
+successor(road6899, road3593).
+predecessor(road6899, road6321).
+Road(road6902).
+elements(map, road6902).
+successor(road6902, road3593).
+predecessor(road6902, road6321).
+Road(road6905).
+elements(map, road6905).
+successor(road6905, road3593).
+predecessor(road6905, road6321).
+Road(road6908).
+elements(map, road6908).
+successor(road6908, road6788).
+predecessor(road6908, road6321).
+Road(road6932).
+elements(map, road6932).
+successor(road6932, road6322).
+predecessor(road6932, road6321).
+Road(road6956).
+elements(map, road6956).
+successor(road6956, road3593).
+predecessor(road6956, road6322).
+Road(road6968).
+elements(map, road6968).
+successor(road6968, road6788).
+predecessor(road6968, road6322).
+Road(road6971).
+elements(map, road6971).
+successor(road6971, road6321).
+predecessor(road6971, road6322).
+Road(road6995).
+elements(map, road6995).
+successor(road6995, road3593).
+predecessor(road6995, road6788).
+Road(road7001).
+elements(map, road7001).
+successor(road7001, road6322).
+predecessor(road7001, road6788).
+Road(road7028).
+elements(map, road7028).
+successor(road7028, road6321).
+predecessor(road7028, road6788).
+Road(road7029).
+elements(map, road7029).
+successor(road7029, junction29).
+predecessor(road7029, junction32).
+Road(road7030).
+elements(map, road7030).
+successor(road7030, junction32).
+predecessor(road7030, junction3).
+Road(road7249).
+elements(map, road7249).
+successor(road7249, road7029).
+predecessor(road7249, road6788).
+Road(road7252).
+elements(map, road7252).
+successor(road7252, road7029).
+predecessor(road7252, road6788).
+Road(road7273).
+elements(map, road7273).
+successor(road7273, road5018).
+predecessor(road7273, road6788).
+Road(road7279).
+elements(map, road7279).
+successor(road7279, road6788).
+predecessor(road7279, road7029).
+Road(road7282).
+elements(map, road7282).
+successor(road7282, road6788).
+predecessor(road7282, road7029).
+Road(road7303).
+elements(map, road7303).
+successor(road7303, road7030).
+predecessor(road7303, road7029).
+Road(road7312).
+elements(map, road7312).
+successor(road7312, road6788).
+predecessor(road7312, road7030).
+Road(road7324).
+elements(map, road7324).
+successor(road7324, road7029).
+predecessor(road7324, road5018).
+Road(road7325).
+elements(map, road7325).
+successor(road7325, junction33).
+predecessor(road7325, junction29).
+Road(road7327).
+elements(map, road7327).
+successor(road7327, junction38).
+predecessor(road7327, junction29).
+Road(road7330).
+elements(map, road7330).
+successor(road7330, road7327).
+predecessor(road7330, road6245).
+Road(road7348).
+elements(map, road7348).
+successor(road7348, road7325).
+predecessor(road7348, road6245).
+Road(road7366).
+elements(map, road7366).
+successor(road7366, road7029).
+predecessor(road7366, road6245).
+Road(road7384).
+elements(map, road7384).
+successor(road7384, road7327).
+predecessor(road7384, road7029).
+Road(road7390).
+elements(map, road7390).
+successor(road7390, road7325).
+predecessor(road7390, road7029).
+Road(road7399).
+elements(map, road7399).
+successor(road7399, road6245).
+predecessor(road7399, road7029).
+Road(road7408).
+elements(map, road7408).
+successor(road7408, road7327).
+predecessor(road7408, road7325).
+Road(road7414).
+elements(map, road7414).
+successor(road7414, road7029).
+predecessor(road7414, road7325).
+Road(road7417).
+elements(map, road7417).
+successor(road7417, road6245).
+predecessor(road7417, road7325).
+Road(road7426).
+elements(map, road7426).
+successor(road7426, road7029).
+predecessor(road7426, road7327).
+Road(road7432).
+elements(map, road7432).
+successor(road7432, road6245).
+predecessor(road7432, road7327).
+Road(road7435).
+elements(map, road7435).
+successor(road7435, road7325).
+predecessor(road7435, road7327).
+Road(road7436).
+elements(map, road7436).
+successor(road7436, junction42).
+predecessor(road7436, junction33).
+Road(road7451).
+elements(map, road7451).
+successor(road7451, road7436).
+predecessor(road7451, road3236).
+Road(road7454).
+elements(map, road7454).
+successor(road7454, road7325).
+predecessor(road7454, road3236).
+Road(road7457).
+elements(map, road7457).
+successor(road7457, road3236).
+predecessor(road7457, road7325).
+Road(road7463).
+elements(map, road7463).
+successor(road7463, road7436).
+predecessor(road7463, road7325).
+Road(road7466).
+elements(map, road7466).
+successor(road7466, road7325).
+predecessor(road7466, road7436).
+Road(road7467).
+elements(map, road7467).
+successor(road7467, junction38).
+predecessor(road7467, junction37).
+Road(road7468).
+elements(map, road7468).
+successor(road7468, junction3).
+predecessor(road7468, junction38).
+Road(road7469).
+elements(map, road7469).
+successor(road7469, junction2).
+predecessor(road7469, junction3).
+Road(road7470).
+elements(map, road7470).
+successor(road7470, junction47).
+predecessor(road7470, junction3).
+Road(road7611).
+elements(map, road7611).
+successor(road7611, road7470).
+predecessor(road7611, road7030).
+Road(road7614).
+elements(map, road7614).
+successor(road7614, road7469).
+predecessor(road7614, road7030).
+Road(road7617).
+elements(map, road7617).
+successor(road7617, road7469).
+predecessor(road7617, road7468).
+Road(road7641).
+elements(map, road7641).
+successor(road7641, road7470).
+predecessor(road7641, road7468).
+Road(road7647).
+elements(map, road7647).
+successor(road7647, road7030).
+predecessor(road7647, road7468).
+Road(road7653).
+elements(map, road7653).
+successor(road7653, road7469).
+predecessor(road7653, road7470).
+Road(road7656).
+elements(map, road7656).
+successor(road7656, road7030).
+predecessor(road7656, road7470).
+Road(road7677).
+elements(map, road7677).
+successor(road7677, road7030).
+predecessor(road7677, road7469).
+Road(road7689).
+elements(map, road7689).
+successor(road7689, road7030).
+predecessor(road7689, road7468).
+Road(road7690).
+elements(map, road7690).
+successor(road7690, junction35).
+predecessor(road7690, junction2).
+Road(road7692).
+elements(map, road7692).
+successor(road7692, junction4).
+predecessor(road7692, junction2).
+Road(road7701).
+elements(map, road7701).
+successor(road7701, road7692).
+predecessor(road7701, road6321).
+Road(road7704).
+elements(map, road7704).
+successor(road7704, road7692).
+predecessor(road7704, road6321).
+Road(road7707).
+elements(map, road7707).
+successor(road7707, road7692).
+predecessor(road7707, road6321).
+Road(road7728).
+elements(map, road7728).
+successor(road7728, road7692).
+predecessor(road7728, road7469).
+Road(road7749).
+elements(map, road7749).
+successor(road7749, road6321).
+predecessor(road7749, road7690).
+Road(road7767).
+elements(map, road7767).
+successor(road7767, road7690).
+predecessor(road7767, road7692).
+Road(road7773).
+elements(map, road7773).
+successor(road7773, road6321).
+predecessor(road7773, road7692).
+Road(road7776).
+elements(map, road7776).
+successor(road7776, road6321).
+predecessor(road7776, road7692).
+Road(road7779).
+elements(map, road7779).
+successor(road7779, road6321).
+predecessor(road7779, road7692).
+Road(road7815).
+elements(map, road7815).
+successor(road7815, road7469).
+predecessor(road7815, road6321).
+Road(road7816).
+elements(map, road7816).
+predecessor(road7816, junction34).
+Road(road7818).
+elements(map, road7818).
+successor(road7818, junction34).
+predecessor(road7818, junction35).
+Road(road7824).
+elements(map, road7824).
+successor(road7824, road7818).
+predecessor(road7824, road3972).
+Road(road7830).
+elements(map, road7830).
+successor(road7830, road7816).
+predecessor(road7830, road3972).
+Road(road7833).
+elements(map, road7833).
+successor(road7833, road3972).
+predecessor(road7833, road7816).
+Road(road7842).
+elements(map, road7842).
+successor(road7842, road7818).
+predecessor(road7842, road7816).
+Road(road7845).
+elements(map, road7845).
+successor(road7845, road3972).
+predecessor(road7845, road7818).
+Road(road7857).
+elements(map, road7857).
+successor(road7857, road7816).
+predecessor(road7857, road7818).
+Road(road7860).
+elements(map, road7860).
+successor(road7860, junction36).
+predecessor(road7860, junction35).
+Road(road8070).
+elements(map, road8070).
+successor(road8070, road7818).
+predecessor(road8070, road6529).
+Road(road8112).
+elements(map, road8112).
+successor(road8112, road6529).
+predecessor(road8112, road7690).
+Road(road8115).
+elements(map, road8115).
+successor(road8115, road7818).
+predecessor(road8115, road7690).
+Road(road8142).
+elements(map, road8142).
+successor(road8142, road6529).
+predecessor(road8142, road7818).
+Road(road8145).
+elements(map, road8145).
+successor(road8145, road7690).
+predecessor(road8145, road7818).
+Road(road8228).
+elements(map, road8228).
+predecessor(road8228, junction36).
+Road(road8229).
+elements(map, road8229).
+successor(road8229, junction36).
+Road(road8478).
+elements(map, road8478).
+successor(road8478, road8228).
+predecessor(road8478, road7860).
+Road(road8481).
+elements(map, road8481).
+successor(road8481, road8229).
+predecessor(road8481, road7860).
+Road(road8487).
+elements(map, road8487).
+successor(road8487, road7860).
+predecessor(road8487, road8228).
+Road(road8490).
+elements(map, road8490).
+successor(road8490, road7860).
+predecessor(road8490, road8229).
+Road(road8517).
+elements(map, road8517).
+successor(road8517, road8228).
+predecessor(road8517, road8229).
+Road(road8523).
+elements(map, road8523).
+successor(road8523, road8228).
+predecessor(road8523, road8229).
+Road(road8526).
+elements(map, road8526).
+successor(road8526, road7860).
+predecessor(road8526, road6529).
+Road(road8553).
+elements(map, road8553).
+successor(road8553, road7690).
+predecessor(road8553, road6529).
+Road(road8586).
+elements(map, road8586).
+successor(road8586, road7860).
+predecessor(road8586, road7690).
+Road(road8616).
+elements(map, road8616).
+successor(road8616, road7860).
+predecessor(road8616, road7818).
+Road(road8619).
+elements(map, road8619).
+successor(road8619, road7818).
+predecessor(road8619, road7860).
+Road(road8631).
+elements(map, road8631).
+successor(road8631, road6529).
+predecessor(road8631, road7860).
+Road(road8637).
+elements(map, road8637).
+successor(road8637, road7690).
+predecessor(road8637, road7860).
+Road(road8640).
+elements(map, road8640).
+successor(road8640, junction38).
+predecessor(road8640, junction45).
+Road(road8641).
+elements(map, road8641).
+successor(road8641, junction37).
+predecessor(road8641, junction42).
+Road(road8642).
+elements(map, road8642).
+successor(road8642, junction44).
+predecessor(road8642, junction37).
+Road(road8645).
+elements(map, road8645).
+successor(road8645, road8642).
+predecessor(road8645, road8641).
+Road(road8648).
+elements(map, road8648).
+successor(road8648, road7467).
+predecessor(road8648, road8641).
+Road(road8678).
+elements(map, road8678).
+successor(road8678, road8642).
+predecessor(road8678, road7467).
+Road(road8702).
+elements(map, road8702).
+successor(road8702, road8641).
+predecessor(road8702, road8642).
+Road(road8720).
+elements(map, road8720).
+successor(road8720, road8640).
+predecessor(road8720, road7327).
+Road(road8723).
+elements(map, road8723).
+successor(road8723, road7467).
+predecessor(road8723, road7327).
+Road(road8735).
+elements(map, road8735).
+successor(road8735, road8640).
+predecessor(road8735, road7467).
+Road(road8738).
+elements(map, road8738).
+successor(road8738, road7468).
+predecessor(road8738, road7467).
+Road(road8747).
+elements(map, road8747).
+successor(road8747, road7327).
+predecessor(road8747, road7467).
+Road(road8750).
+elements(map, road8750).
+successor(road8750, road7467).
+predecessor(road8750, road8640).
+Road(road8753).
+elements(map, road8753).
+successor(road8753, road7327).
+predecessor(road8753, road8640).
+Road(road8762).
+elements(map, road8762).
+successor(road8762, road7468).
+predecessor(road8762, road8640).
+Road(road8768).
+elements(map, road8768).
+successor(road8768, road7327).
+predecessor(road8768, road7468).
+Road(road8771).
+elements(map, road8771).
+successor(road8771, road8641).
+predecessor(road8771, road7467).
+Road(road8774).
+elements(map, road8774).
+successor(road8774, road7467).
+predecessor(road8774, road8642).
+Road(road8777).
+elements(map, road8777).
+successor(road8777, road8641).
+predecessor(road8777, road2630).
+Road(road8780).
+elements(map, road8780).
+successor(road8780, road7436).
+predecessor(road8780, road2630).
+Road(road8783).
+elements(map, road8783).
+successor(road8783, road2630).
+predecessor(road8783, road7436).
+Road(road8786).
+elements(map, road8786).
+successor(road8786, road8641).
+predecessor(road8786, road7436).
+Road(road8789).
+elements(map, road8789).
+successor(road8789, road7436).
+predecessor(road8789, road8641).
+Road(road8792).
+elements(map, road8792).
+successor(road8792, road2630).
+predecessor(road8792, road8641).
+Road(road8795).
+elements(map, road8795).
+successor(road8795, road6245).
+predecessor(road8795, road4312).
+Road(road8798).
+elements(map, road8798).
+successor(road8798, road5021).
+predecessor(road8798, road4312).
+Road(road8810).
+elements(map, road8810).
+successor(road8810, road5021).
+predecessor(road8810, road6245).
+Road(road8813).
+elements(map, road8813).
+successor(road8813, road4312).
+predecessor(road8813, road6245).
+Road(road8828).
+elements(map, road8828).
+successor(road8828, road4312).
+predecessor(road8828, road5021).
+Road(road8829).
+elements(map, road8829).
+successor(road8829, junction44).
+predecessor(road8829, junction45).
+Road(road8832).
+elements(map, road8832).
+successor(road8832, road8642).
+predecessor(road8832, road907).
+Road(road8844).
+elements(map, road8844).
+successor(road8844, road8829).
+predecessor(road8844, road907).
+Road(road8859).
+elements(map, road8859).
+successor(road8859, road8829).
+predecessor(road8859, road8642).
+Road(road8862).
+elements(map, road8862).
+successor(road8862, road907).
+predecessor(road8862, road8642).
+Road(road8877).
+elements(map, road8877).
+successor(road8877, road8642).
+predecessor(road8877, road8829).
+Road(road8892).
+elements(map, road8892).
+successor(road8892, road907).
+predecessor(road8892, road8829).
+Road(road8901).
+elements(map, road8901).
+successor(road8901, road8640).
+predecessor(road8901, road365).
+Road(road8904).
+elements(map, road8904).
+successor(road8904, road8829).
+predecessor(road8904, road365).
+Road(road8907).
+elements(map, road8907).
+successor(road8907, road8829).
+predecessor(road8907, road8640).
+Road(road8910).
+elements(map, road8910).
+successor(road8910, road365).
+predecessor(road8910, road8640).
+Road(road8913).
+elements(map, road8913).
+successor(road8913, road365).
+predecessor(road8913, road8829).
+Road(road8916).
+elements(map, road8916).
+successor(road8916, road3972).
+predecessor(road8916, road3688).
+Road(road8919).
+elements(map, road8919).
+successor(road8919, road6325).
+predecessor(road8919, road3688).
+Road(road8922).
+elements(map, road8922).
+successor(road8922, road3688).
+predecessor(road8922, road3972).
+Road(road8925).
+elements(map, road8925).
+successor(road8925, road6325).
+predecessor(road8925, road3972).
+Road(road8928).
+elements(map, road8928).
+successor(road8928, road3972).
+predecessor(road8928, road6325).
+Road(road8931).
+elements(map, road8931).
+successor(road8931, road3688).
+predecessor(road8931, road6325).
+Road(road8937).
+elements(map, road8937).
+successor(road8937, road7692).
+predecessor(road8937, road128).
+Road(road8946).
+elements(map, road8946).
+successor(road8946, road128).
+predecessor(road8946, road367).
+Road(road8949).
+elements(map, road8949).
+successor(road8949, road128).
+predecessor(road8949, road7692).
+Road(road8952).
+elements(map, road8952).
+successor(road8952, road128).
+predecessor(road8952, road7692).
+Road(road8955).
+elements(map, road8955).
+successor(road8955, road128).
+predecessor(road8955, road7692).
+Road(road8958).
+elements(map, road8958).
+successor(road8958, road128).
+predecessor(road8958, road7692).
+Road(road8988).
+elements(map, road8988).
+successor(road8988, road367).
+predecessor(road8988, road7692).
+Road(road9003).
+elements(map, road9003).
+successor(road9003, road560).
+predecessor(road9003, road365).
+Road(road9006).
+elements(map, road9006).
+successor(road9006, road367).
+predecessor(road9006, road365).
+Road(road9009).
+elements(map, road9009).
+successor(road9009, road367).
+predecessor(road9009, road365).
+Road(road9012).
+elements(map, road9012).
+successor(road9012, road7470).
+predecessor(road9012, road365).
+Road(road9015).
+elements(map, road9015).
+successor(road9015, road7470).
+predecessor(road9015, road367).
+Road(road9018).
+elements(map, road9018).
+successor(road9018, road365).
+predecessor(road9018, road367).
+Road(road9021).
+elements(map, road9021).
+successor(road9021, road560).
+predecessor(road9021, road367).
+Road(road9024).
+elements(map, road9024).
+successor(road9024, road367).
+predecessor(road9024, road560).
+Road(road9027).
+elements(map, road9027).
+successor(road9027, road7470).
+predecessor(road9027, road560).
+Road(road9030).
+elements(map, road9030).
+successor(road9030, road365).
+predecessor(road9030, road560).
+Road(road9033).
+elements(map, road9033).
+successor(road9033, road365).
+predecessor(road9033, road7470).
+Road(road9036).
+elements(map, road9036).
+successor(road9036, road560).
+predecessor(road9036, road7470).
+Road(road9039).
+elements(map, road9039).
+successor(road9039, road367).
+predecessor(road9039, road7470).
