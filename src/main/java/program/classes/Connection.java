@@ -10,13 +10,13 @@ public class Connection extends IDHandler {
     Road connectingRoad;
 
     ArrayList<Link> links = new ArrayList<>();
-    public Connection(Junction junction){
+    public Connection(Junction junction, String id){
         this.junction = junction;
         //TODO
-        generateID();
+        generateID(id);
     }
-    void generateID(){
-        ElementID = junction.getID()+"Connection"+atomicInteger.incrementAndGet();
+    void generateID(String id){
+        ElementID = junction.getID()+"_"+this.getClass().getSimpleName()+"_"+id;
     }
 
 

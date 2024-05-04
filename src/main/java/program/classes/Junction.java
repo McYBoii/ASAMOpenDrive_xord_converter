@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Junction extends MapElement{
     ArrayList<Connection> connections = new ArrayList<>();
 
-    public Junction(Map map){
+    public Junction(Map map, String id){
         super(map);
         //TODO
-        generateID();
+        generateID(id);
     }
-    void generateID(){
-        ElementID = map.getID()+"Junction"+atomicInteger.incrementAndGet();
+    void generateID(String id){
+        ElementID = map.getID()+"_"+this.getClass().getSimpleName()+"_"+id;
     }
 
     //TODO

@@ -4,9 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class IDHandler {
     protected String ElementID = null;
-    protected AtomicInteger atomicInteger = new AtomicInteger(0);
 
-    void generateID(){}
+    void generateID(String id){}
 
     public String getID(){
         return ElementID;

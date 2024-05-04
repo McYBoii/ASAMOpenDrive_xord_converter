@@ -5,20 +5,31 @@ import program.interfaces.IDHandler;
 import java.util.ArrayList;
 
 public class Road extends MapElement{
-    MapElement predecessor;
-    MapElement successor;
+    MapElement predecessor = null;
+    MapElement successor = null;
     ArrayList<Lane> leftLanes = new ArrayList<>();
     Lane centerLane;
     ArrayList<Lane> rightLanes = new ArrayList<>();
 
-    public Road(Map map){
+    public Road(Map map, String id){
         super(map);
         //TODO
-        generateID();
+        generateID(id);
     }
-    void generateID(){
-        ElementID = map.getID()+"Road"+atomicInteger.incrementAndGet();
+    void generateID(String id){
+        ElementID = map.getID()+"_"+this.getClass().getSimpleName()+"_"+id;
     }
 
     //TODO
+
+    public void addLeftLane(Lane lane){
+        leftLanes.add(lane);
+    }
+    public void addRightLane(Lane lane){
+        rightLanes.add(lane);
+    }
+
+    public void setCenterLane(Lane lane){
+        centerLane = lane;
+    }
 }

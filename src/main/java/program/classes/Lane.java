@@ -9,13 +9,13 @@ public class Lane extends IDHandler {
 
     LaneType laneType;
 
-    public Lane(Road road){
+    public Lane(Road road, String id){
         this.road = road;
         //TODO
-        generateID();
+        generateID(id);
     }
-    void generateID(){
-        ElementID = road.getID()+"Lane"+atomicInteger.incrementAndGet();
+    void generateID(String id){
+        ElementID = road.getID()+"_"+this.getClass().getSimpleName()+"_"+id;
     }
 
     //TODO
