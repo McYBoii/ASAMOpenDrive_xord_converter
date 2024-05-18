@@ -9,6 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -56,7 +57,7 @@ class LaneLink{
     Lane from
     Lane to
 }
-enum LaneType {border, sidewalk, driving, parking, restricted, none}
+enum LaneType {border, sidewalk, driving, biking, parking, restricted, none}
 
 %Scope
 scope node = 10..10000, Map += 0, Junction += 0, Connection += 0, LaneLink += 0, Road += 0, Lane += 0.
@@ -238,6 +239,13 @@ Map(map).
     }
 
     static String FILEPATH = "model.problem";
+
+
+    ///EXPERIMENTAL REGION FOR DEBUGING
+
+
+
+    ///==!==!==!==!==!==!==
 
     public static void main(String[] args) {
 

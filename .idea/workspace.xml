@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="Everything is converted, lanesections are a problem may seek a solvation later.">
+    <list default="true" id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="Added parking type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.problem" beforeDir="false" afterPath="$PROJECT_DIR$/model.problem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,29 +62,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Launch.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ASAMOpenDrive_xodr_converter [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build ASAMOpenDrive_xodr_converter.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/00SUSU/OL/refinery&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Launch.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Gradle.ASAMOpenDrive_xodr_converter [:Main.main()].executor": "Run",
+    "Gradle.Build ASAMOpenDrive_xodr_converter.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "feature",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/00SUSU/OL/refinery",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="program" />
@@ -125,7 +126,7 @@
       <workItem from="1714910251752" duration="10295000" />
       <workItem from="1715167467232" duration="676000" />
       <workItem from="1715695665336" duration="7166000" />
-      <workItem from="1716042166060" duration="2054000" />
+      <workItem from="1716042166060" duration="2727000" />
     </task>
     <task id="LOCAL-00001" summary="Created the repository">
       <option name="closed" value="true" />
@@ -215,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714921508550</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added parking type">
+      <option name="closed" value="true" />
+      <created>1716045695305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716045695305</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +262,8 @@
     <MESSAGE value="Making progress" />
     <MESSAGE value="Iteration on roads seems to work fine, can sex successor and predecessor" />
     <MESSAGE value="Everything is converted, lanesections are a problem may seek a solvation later." />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything is converted, lanesections are a problem may seek a solvation later." />
+    <MESSAGE value="Added parking type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added parking type" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ASAMOpenDrive_xodr_converter$Main.ic" NAME="Main Coverage Results" MODIFIED="1714602549345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
