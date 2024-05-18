@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="Iteration on roads seems to work fine, can sex successor and predecessor">
+    <list default="true" id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="Everything is converted, lanesections are a problem may seek a solvation later.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.problem" beforeDir="false" afterPath="$PROJECT_DIR$/model.problem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
@@ -77,6 +76,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/00SUSU/OL/refinery&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -122,7 +122,10 @@
       <workItem from="1714580641477" duration="20979000" />
       <workItem from="1714826195525" duration="4442000" />
       <workItem from="1714830802007" duration="3932000" />
-      <workItem from="1714910251752" duration="9904000" />
+      <workItem from="1714910251752" duration="10295000" />
+      <workItem from="1715167467232" duration="676000" />
+      <workItem from="1715695665336" duration="7166000" />
+      <workItem from="1716042166060" duration="2054000" />
     </task>
     <task id="LOCAL-00001" summary="Created the repository">
       <option name="closed" value="true" />
@@ -196,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714835422367</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Everything is converted, lanesections are a problem may seek a solvation later.">
+      <option name="closed" value="true" />
+      <created>1714921277392</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714921277393</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Everything is converted, lanesections are a problem may seek a solvation later.">
+      <option name="closed" value="true" />
+      <created>1714921508550</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714921508550</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +252,8 @@
     <MESSAGE value="Last commit on this branch starting a new branch, where conversion is in the focus." />
     <MESSAGE value="Making progress" />
     <MESSAGE value="Iteration on roads seems to work fine, can sex successor and predecessor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iteration on roads seems to work fine, can sex successor and predecessor" />
+    <MESSAGE value="Everything is converted, lanesections are a problem may seek a solvation later." />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything is converted, lanesections are a problem may seek a solvation later." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ASAMOpenDrive_xodr_converter$Main.ic" NAME="Main Coverage Results" MODIFIED="1714602549345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

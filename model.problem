@@ -37,10 +37,10 @@ class LaneLink{
     Lane from
     Lane to
 }
-enum LaneType {border, sidewalk, driving, restricted, none}
+enum LaneType {border, sidewalk, driving, parking, restricted, none}
 
 %Scope
-scope node = 10..5000, Map += 0, Junction += 0, Connection += 0, LaneLink += 0, Road += 0, Lane += 0.
+scope node = 10..10000, Map += 0, Junction += 0, Connection += 0, LaneLink += 0, Road += 0, Lane += 0.
 
 %Instace model
 Map(map).
