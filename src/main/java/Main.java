@@ -44,6 +44,8 @@ class LaneSection{
     contains Lane[] rightlanes
 }
 class Lane{
+    Lane successorlane
+    Lane predecessorlane
     LaneType type
 }
 class Connection{
@@ -59,8 +61,17 @@ class LaneLink{
 }
 enum LaneType {border, sidewalk, driving, biking, parking, restricted, none}
 
+class Car{
+    Lane position
+}
+
+%Predications
+
+
+
 %Scope
-scope node = 10..10000, Map += 0, Junction += 0, Connection += 0, LaneLink += 0, Road += 0, Lane += 0.
+
+scope Map += 0, Junction += 0, Connection += 0, Link += 0, Road += 0, Lane += 0.
 
 %Instace model
 Map(map).
