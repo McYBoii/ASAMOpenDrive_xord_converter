@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
 
@@ -208,6 +209,24 @@ Map(map).
         return "predecessor("+roadID+", "+predecessorID+").\n";
     }
 
+    /** Use this methon to set the successor lane on a lane
+     * @param laneID lane to set the successor of
+     * @param successorLaneID successor lane
+     * @return Refinery attirbute setter text
+     */
+    public static String laneSuccessorSetter(String laneID, String successorLaneID){
+        return "successorlane("+laneID+", "+successorLaneID+").\n";
+    }
+
+    /** Use this methon to set the predecessor lane on a lane
+     * @param laneID lane to set the predecessor of
+     * @param predecessorLaneID predecessor lane
+     * @return Refinery attirbute setter text
+     */
+    public static String lanePredecessorSetter(String laneID, String predecessorLaneID){
+        return "predecessorlane("+laneID+", "+predecessorLaneID+").\n";
+    }
+
     /** Use this function to add a lanesection to a Road
      * @param roadID Road that recieves the LaneSection
      * @param lanesectionID LaneSection to add
@@ -260,6 +279,8 @@ Map(map).
 
     public static void main(String[] args) {
 
+        HashMap<String, String> roadsLastLanesections = new HashMap<>();
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         if (args.length != 1) {
             System.out.println("Invalid arguments!\n" +
@@ -277,6 +298,13 @@ Map(map).
             NodeList roads = rootElement.getElementsByTagName("road");
             NodeList junctions = rootElement.getElementsByTagName("junction");
             NodeList junctiongroups = rootElement.getElementsByTagName("junctionGroup");
+
+            for (int i = 0; i < roads.getLength(); i++) {
+                Element road =(Element) roads.item(i);
+                String roadID = "road"+road.getAttribute("id");
+                NodeList lanesections = road.getElementsByTagName("laneSection");
+                roadsLastLanesections.put(roadID, roadID+"lanesection"+(lanesections.getLength()-1));
+            }
 
             // Making the file or overrideing it
             File output = new File(FILEPATH);
@@ -308,20 +336,36 @@ Map(map).
 
                 //Sometimes successor and predecessor are not present we take care of this here.
                 String successorID = null;
+                String successorType = null;
                 if(successors.getLength() == 1){
                     Element successor = (Element)successors.item(0);
+                    successorType = successor.getAttribute("elementType");
                     successorID= successor.getAttribute("elementType")+successor.getAttribute("elementId");
                     fileWriter.write(successorSetter(roadID, successorID));
                 }
                 String predecessorID = null;
+                String predecessorType = null;
                 if(predecessors.getLength() == 1){
                     Element predecessor = (Element)predecessors.item(0);
+                    predecessorType = predecessor.getAttribute("elementType");
                     predecessorID = predecessor.getAttribute("elementType")+predecessor.getAttribute("elementId");
                     fileWriter.write(predecessorSetter(roadID, predecessorID));
                 }
 
                 //Getting the laneSections and processing them
                 NodeList lanesections = road.getElementsByTagName("laneSection");
+
+                // We store the roads last lanesection to help with predecessor connections later.
+                roadsLastLanesections.put(roadID, roadID+"lanesection"+(lanesections.getLength()-1));
+
+                // We store all lanesections to help with connections later.
+                ArrayList<String> sections = new ArrayList<>();
+
+                for (int j = 0; j < lanesections.getLength(); j++) {
+                    String lanesectionID = roadID+"lanesection"+j;
+                    sections.add(lanesectionID);
+                }
+
                 //Lane sections dont have ID's, we generate for them from the cycle
                 for (int j = 0; j < lanesections.getLength(); j++) {
                     Element lanesection = (Element) lanesections.item(j);
@@ -337,16 +381,122 @@ Map(map).
                             fileWriter.write(createLane(laneID));
                             fileWriter.write(laneTypeSetter(laneID, lane.getAttribute("type")));
                             fileWriter.write(addLeftLane(lanesectionID, laneID));
+
+                            NodeList lanelinks = road.getElementsByTagName("link");
+                            // safe, link tags are always present even if empty
+                            Element lanelink = (Element)links.item(0);
+
+                            NodeList lanesuccessors = link.getElementsByTagName("successor");
+                            NodeList lanepredecessors = link.getElementsByTagName("predecessor");
+
+                            //Sometimes successor and predecessor are not present we take care of this here.
+                            String lanesuccessorID = null;
+                            if(lanesuccessors.getLength() == 1  && successorType == "road"){
+                                Element successor = (Element)successors.item(0);
+                                if(j == lanesections.getLength()-1){
+                                    if(successorID != null){
+                                        lanesuccessorID = successorID+"lanesection0"+"lane"+negaviteIDconverter(successor.getAttribute("id"));
+                                        fileWriter.write(laneSuccessorSetter(laneID, lanesuccessorID));
+                                    }
+                                }else{
+                                    fileWriter.write(laneSuccessorSetter(laneID, roadID+sections.get(j+1)+"lane"+negaviteIDconverter(successor.getAttribute("id"))));
+                                }
+                            }
+                            String lanepredecessorID = null;
+                            if(predecessors.getLength() == 1  && predecessorType == "road"){
+                                Element predecessor = (Element)predecessors.item(0);
+                                if(j == 0){
+                                    if(predecessorID != null){
+                                        if(roadsLastLanesections.containsKey(predecessorID)){
+                                            lanepredecessorID = predecessorID+roadsLastLanesections.get(predecessorID)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"));
+                                            fileWriter.write(lanePredecessorSetter(laneID, lanepredecessorID));
+                                        }
+                                    }
+                                }else{
+                                    fileWriter.write(lanePredecessorSetter(laneID, roadID+sections.get(j-1)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"))));
+                                }
+                            }
+
                         }else if(0 == id){//center lane
                             String laneID = lanesectionID+"lane"+lane.getAttribute("id");
                             fileWriter.write(createLane(laneID));
                             fileWriter.write(laneTypeSetter(laneID, lane.getAttribute("type")));
                             fileWriter.write(centerLaneSetter(lanesectionID, laneID));
+
+                            NodeList lanelinks = road.getElementsByTagName("link");
+                            // safe, link tags are always present even if empty
+                            Element lanelink = (Element)links.item(0);
+
+                            NodeList lanesuccessors = link.getElementsByTagName("successor");
+                            NodeList lanepredecessors = link.getElementsByTagName("predecessor");
+
+                            //Sometimes successor and predecessor are not present we take care of this here.
+                            String lanesuccessorID = null;
+                            if(lanesuccessors.getLength() == 1 && successorType == "road"){
+                                Element successor = (Element)successors.item(0);
+                                if(j == lanesections.getLength()-1){
+                                    if(successorID != null){
+                                        lanesuccessorID = successorID+"lanesection0"+"lane"+negaviteIDconverter(successor.getAttribute("id"));
+                                        fileWriter.write(laneSuccessorSetter(laneID, lanesuccessorID));
+                                    }
+                                }else{
+                                    fileWriter.write(laneSuccessorSetter(laneID, roadID+sections.get(j+1)+"lane"+negaviteIDconverter(successor.getAttribute("id"))));
+                                }
+                            }
+                            String lanepredecessorID = null;
+                            if(predecessors.getLength() == 1  && predecessorType == "road"){
+                                Element predecessor = (Element)predecessors.item(0);
+                                if(j == 0){
+                                    if(predecessorID != null){
+                                        if(roadsLastLanesections.containsKey(predecessorID)){
+                                            lanepredecessorID = predecessorID+roadsLastLanesections.get(predecessorID)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"));
+                                            fileWriter.write(lanePredecessorSetter(laneID, lanepredecessorID));
+                                        }
+                                    }
+                                }else{
+                                    fileWriter.write(lanePredecessorSetter(laneID, roadID+sections.get(j-1)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"))));
+                                }
+                            }
                         }else if(0 > id){//right lanes, also converting
                             String laneID = lanesectionID+"lane"+negaviteIDconverter(lane.getAttribute("id"));
                             fileWriter.write(createLane(laneID));
                             fileWriter.write(laneTypeSetter(laneID, lane.getAttribute("type")));
                             fileWriter.write(addRightLane(lanesectionID, laneID));
+
+                            NodeList lanelinks = road.getElementsByTagName("link");
+                            // safe, link tags are always present even if empty
+                            Element lanelink = (Element)links.item(0);
+
+                            NodeList lanesuccessors = link.getElementsByTagName("successor");
+                            NodeList lanepredecessors = link.getElementsByTagName("predecessor");
+
+                            //Sometimes successor and predecessor are not present we take care of this here.
+                            String lanesuccessorID = null;
+                            if(lanesuccessors.getLength() == 1  && successorType == "road"){
+                                Element successor = (Element)successors.item(0);
+                                if(j == lanesections.getLength()-1){
+                                    if(successorID != null){
+                                        lanesuccessorID = successorID+"lanesection0"+"lane"+negaviteIDconverter(successor.getAttribute("id"));
+                                        fileWriter.write(laneSuccessorSetter(laneID, lanesuccessorID));
+                                    }
+                                }else{
+                                    fileWriter.write(laneSuccessorSetter(laneID, roadID+sections.get(j+1)+"lane"+negaviteIDconverter(successor.getAttribute("id"))));
+                                }
+                            }
+                            String lanepredecessorID = null;
+                            if(predecessors.getLength() == 1  && predecessorType == "road"){
+                                Element predecessor = (Element)predecessors.item(0);
+                                if(j == 0){
+                                    if(predecessorID != null){
+                                        if(roadsLastLanesections.containsKey(predecessorID)){
+                                            lanepredecessorID = predecessorID+roadsLastLanesections.get(predecessorID)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"));
+                                            fileWriter.write(lanePredecessorSetter(laneID, lanepredecessorID));
+                                        }
+                                    }
+                                }else{
+                                    fileWriter.write(lanePredecessorSetter(laneID, roadID+sections.get(j-1)+"lane"+negaviteIDconverter(predecessor.getAttribute("id"))));
+                                }
+                            }
                         }
                     }
                 }
