@@ -531,7 +531,7 @@ Map(map).
                         fileWriter.write(addLaneLink(connectionID, linkID));
 
                         fileWriter.write(toSetter(linkID, "road"+connectingroad+"lanesection0lane"+negaviteIDconverter(link.getAttribute("to"))));
-                        fileWriter.write(fromSetter(linkID, "road"+incomingroad+"lanesection0lane"+negaviteIDconverter(link.getAttribute("from"))));
+                        fileWriter.write(fromSetter(linkID, roadsLastLanesections.get(("road"+incomingroad))+"lane"+negaviteIDconverter(link.getAttribute("from"))));
 
                     }
 
