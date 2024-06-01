@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="Fixed the errors regarding the successor and the predecessor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.problem" beforeDir="false" afterPath="$PROJECT_DIR$/model.problem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;McYBoii&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/McYBoii/ASAMOpenDrive_xord_converter&quot;,
+    &quot;accountId&quot;: &quot;9eb06676-7db9-4f90-9936-354fe5cd22ec&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2fpHDmQF3lBO32PndzQFDwaEGmW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Launch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ASAMOpenDrive_xodr_converter [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build ASAMOpenDrive_xodr_converter.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/00SUSU/OL/refinery&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="program" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ASAMOpenDrive_xodr_converter.main" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../00SUSU/OL/ASAM_OpenDrive/ZalaZONE_SmartCityZone_plan.xodr" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e1dd4bf-2dc3-4c72-9de1-35e093265f53" name="Changes" comment="" />
+      <created>1714490984965</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714490984965</updated>
+      <workItem from="1714490985899" duration="531000" />
+      <workItem from="1714575860415" duration="926000" />
+      <workItem from="1714576805557" duration="814000" />
+      <workItem from="1714580641477" duration="20979000" />
+      <workItem from="1714826195525" duration="4442000" />
+      <workItem from="1714830802007" duration="3932000" />
+      <workItem from="1714910251752" duration="10295000" />
+      <workItem from="1715167467232" duration="676000" />
+      <workItem from="1715695665336" duration="7166000" />
+      <workItem from="1716042166060" duration="3612000" />
+      <workItem from="1716380112639" duration="15437000" />
+      <workItem from="1716468897547" duration="8439000" />
+      <workItem from="1716567414442" duration="4639000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created the repository">
+      <option name="closed" value="true" />
+      <created>1714491079383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714491079383</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created the repository">
+      <option name="closed" value="true" />
+      <created>1714491293777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714491293777</updated>
+    </task>
+    <task id="LOCAL-00003" summary="All classes created">
+      <option name="closed" value="true" />
+      <created>1714576126682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714576126682</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added variables and more classes, set up ID generation(might not work as intended)">
+      <option name="closed" value="true" />
+      <created>1714592733642</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714592733643</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added support for file path from argument, XML reading works, but it needs work and the processing.">
+      <option name="closed" value="true" />
+      <created>1714604158557</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714604158557</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Last commit on this branch starting a new branch, where conversion is in the focus.">
+      <option name="closed" value="true" />
+      <created>1714826267122</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714826267122</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Making progress">
+      <option name="closed" value="true" />
+      <created>1714831027845</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714831027845</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Iteration on roads seems to work fine, can sex successor and predecessor">
+      <option name="closed" value="true" />
+      <created>1714835375584</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714835375584</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Iteration on roads seems to work fine, can sex successor and predecessor">
+      <option name="closed" value="true" />
+      <created>1714835422367</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714835422367</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Everything is converted, lanesections are a problem may seek a solvation later.">
+      <option name="closed" value="true" />
+      <created>1714921277392</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714921277393</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Everything is converted, lanesections are a problem may seek a solvation later.">
+      <option name="closed" value="true" />
+      <created>1714921508550</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714921508550</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added parking type">
+      <option name="closed" value="true" />
+      <created>1716045695305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716045695305</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added biking type">
+      <option name="closed" value="true" />
+      <created>1716046363540</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716046363540</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Modified Lane to have successor and predecessor">
+      <option name="closed" value="true" />
+      <created>1716392999310</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716392999310</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Now we can interpret lane successors and predecessors.">
+      <option name="closed" value="true" />
+      <created>1716419033919</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716419033919</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed the errors regarding the successor and the predecessor">
+      <option name="closed" value="true" />
+      <created>1716469879398</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716469879398</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/feature" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created the repository" />
+    <MESSAGE value="All classes created" />
+    <MESSAGE value="Added variables and more classes, set up ID generation(might not work as intended)" />
+    <MESSAGE value="Added support for file path from argument, XML reading works, but it needs work and the processing." />
+    <MESSAGE value="Last commit on this branch starting a new branch, where conversion is in the focus." />
+    <MESSAGE value="Making progress" />
+    <MESSAGE value="Iteration on roads seems to work fine, can sex successor and predecessor" />
+    <MESSAGE value="Everything is converted, lanesections are a problem may seek a solvation later." />
+    <MESSAGE value="Added parking type" />
+    <MESSAGE value="Added biking type" />
+    <MESSAGE value="Modified Lane to have successor and predecessor" />
+    <MESSAGE value="Now we can interpret lane successors and predecessors." />
+    <MESSAGE value="Fixed the errors regarding the successor and the predecessor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the errors regarding the successor and the predecessor" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ASAMOpenDrive_xodr_converter$Main.ic" NAME="Main Coverage Results" MODIFIED="1714602549345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>program.main.*</FILTER>
+    </SUITE>
+  </component>
+</project>

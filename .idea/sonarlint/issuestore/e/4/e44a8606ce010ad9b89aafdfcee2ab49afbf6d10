@@ -1,0 +1,49 @@
+
+	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Üã™Ûú1J$35507753-946a-4c98-bfac-842d7240493d
+	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Şã™Ûú1J$13c8d1c9-ef84-4561-8418-4c6690f466a2
+	java:S112¸"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Şã™Ûú1J$9c7c68ac-afd1-4cfa-8e3d-1ad5c14d957d
+’
+java:S1192¬"IDefine a constant instead of duplicating this literal "junction" 4 times.(–Øß…ûÿÿÿÿ8àã™Ûú1J$960e3903-cad2-4785-852b-85b635ed2e3a
+“
+java:S1192Ï"JDefine a constant instead of duplicating this literal "successor" 4 times.(Œ³ùÃúÿÿÿÿ8áã™Ûú1J$60aeed06-bffe-484c-b286-c7b02b2c9e63
+
+java:S1192³"LDefine a constant instead of duplicating this literal "lanesection" 4 times.(şÊ¡×8áã™Ûú1J$9a55b70d-3789-4c39-9ddd-e1caf0a678be
+
+java:S1192Ğ"LDefine a constant instead of duplicating this literal "predecessor" 4 times.(Üï‰p8âã™Ûú1J$11bfbf71-a2f0-4eb5-8141-f2aa414bb734
+•
+java:S1192×"LDefine a constant instead of duplicating this literal "elementType" 4 times.(ï‚áùşÿÿÿÿ8âã™Ûú1J$66030d05-0aab-40bd-b3fa-82e455222c64
+‘
+java:S1192"MDefine a constant instead of duplicating this literal "lanesection0" 3 times.(ÙÌ†Ÿ8âã™Ûú1J$e251cd36-47e1-41be-a3fd-f0bf3fab0014
+s
+java:S1066›"/Merge this if statement with the enclosing one.(€¦×˜8äã™Ûú1J$51c16559-12d3-42fd-a4fd-753db8d6b346
+s
+java:S1066Ä"/Merge this if statement with the enclosing one.(€¦×˜8åã™Ûú1J$63107f9f-6ef7-4c50-9aeb-88e15c2a8ce7
+s
+java:S1066ì"/Merge this if statement with the enclosing one.(€¦×˜8åã™Ûú1J$b80141dc-f7f3-4890-ba83-3f67b2f51e73
+…
+java:S4973"<Strings and Boxed types should be compared using "equals()".(—õºÿÿÿÿÿ8ëã™Ûú1J$407bd9c3-9e2a-4d73-b84b-30379a71c3c2
+…
+java:S4973·"<Strings and Boxed types should be compared using "equals()".(—õºÿÿÿÿÿ8ëã™Ûú1J$b0f4c72c-c654-4578-bb4f-51ae5c8c495b
+…
+java:S4973ß"<Strings and Boxed types should be compared using "equals()".(—õºÿÿÿÿÿ8ìã™Ûú1J$3d94da1e-0a89-41df-acdc-e852be15604e
+]
+java:S1220""Move this file to a named package.8íã™Ûú1J$ee2e8c60-acae-4d00-bafd-36d0bfdf9f8d
+w
+java:S2755"3Disable access to external entities in XML parsing.(ğ¨ºî8Ïé™Ûú1J$b2db467f-3698-4b8b-b7b7-713484bf797a
+œ
+java:S3008"SRename this field "FILEPATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùå¿¸üÿÿÿÿ8Ñé™Ûú1J$6916cc3d-48a2-46e4-8d92-6b007ecd008a
+|
+java:S3400"9Remove this method and declare a constant for this value.(œúê¦8Øé™Ûú1J$80b1e437-3861-40ab-ae8e-6a8d1f42e969
+—
+java:S3776™"SRefactor this method to reduce its Cognitive Complexity from 173 to the 15 allowed.(Çµí‘8‰ê™Ûú1J$518b155e-b80b-46f9-ba36-01124978a37b
+Œ
+java:S1854ß"CRemove this useless assignment to local variable "predecessorType".(É÷ÃÊùÿÿÿÿ8¥ê™Ûú1J$eb02c2b4-b64f-4813-a777-7c32805f4d4b
+s	java:S106Ÿ"+Replace this use of System.out by a logger.(áˆÛéùÿÿÿÿ8«ê™Ûú1J$e5e0b4f1-c820-47d3-980f-54c6a7bd5f12
+‰
+java:S2147·"ECombine this catch with the one at line 562, which has the same body.(Ã‡²ö8­ê™Ûú1J$2a068b26-78bc-4d46-ad46-668fb683839e
+}
+java:S1481Ü"4Remove this unused "predecessorType" local variable.(‘ã…¹şÿÿÿÿ8¾ê™Ûú1J$0a529792-28aa-41d3-a3c9-16e27f72a683
+s	java:S106°"+Replace this use of System.out by a logger.(Ò›îÿÿÿÿÿ8íê™Ûú1J$19329898-919a-4aa4-8e9f-eb29987e102d
+n	java:S106µ"+Replace this use of System.out by a logger.(†Õ‘«8ïê™Ûú1J$a84ca434-805c-4df7-80b2-149cc8f7243f
+‹
+java:S6541™"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 217 to 64, Complexity from 41 to 14, Nesting Level from 9 to 2, Number of Variables from 88 to 6.(Çµí‘8ñê™Ûú1J$feb68aef-d6eb-4859-852a-a849f993228b

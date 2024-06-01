@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ASAMOpenDrive_xodr_converter.iml" filepath="$PROJECT_DIR$/ASAMOpenDrive_xodr_converter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ASAMOpenDrive_xodr_converter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ASAMOpenDrive_xodr_converter.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ASAMOpenDrive_xodr_converter.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ASAMOpenDrive_xodr_converter.test.iml" />
+    </modules>
+  </component>
+</project>
